@@ -4,6 +4,10 @@ Fixes the Windows ChatGPT desktop error **"Could not use this project for a loca
 
 A tiny guard script kills the app's own idle `node_repl.exe` prewarm helpers while ChatGPT is running — those helpers park their working directory inside the project mirror and block the file-system sync that a Work creation needs. Everything else is left alone.
 
+解决了在ChatGPT项目中创建“工作区”时出现的Windows ChatGPT桌面错误：“无法将此项目用于本地聊天”。 
+
+该修复方案包含了一个小型脚本：在ChatGPT运行期间，该脚本会终止应用程序自身的idle_node_repl.exe进程。这些进程会占用项目镜像中的工作目录，从而阻碍了创建“工作区”所需的文件系统同步操作。除此之外，其他一切功能均不受影响。
+
 > Tested against ChatGPT desktop `26.915.4065.0` (OpenAI.Codex MSIX) on Windows 11, 2026-09.
 > Verified live: creations succeed on the first click and after switching projects; log shows `Conversation created` with no `sync failed`.
 
